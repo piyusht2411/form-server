@@ -69,7 +69,7 @@ export const login:RequestHandler = async(req, res, next) => {
         res.cookie('authToken',authToken,({httpOnly : true})) ;
         res.cookie('refreshToken',refreshToken,({httpOnly:true})) ;
 
-        return res.status(200).json({ok:true,message : "Login Successful",userid:user.id}) ;
+        return res.status(200).json({ok:true,message : "Login Successful",user, token:authToken}) ;
 
     }
     catch(err){
