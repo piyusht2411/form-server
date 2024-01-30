@@ -70,7 +70,7 @@ export const login:RequestHandler = async(req, res, next) => {
         res.cookie('refreshToken',refreshToken,({httpOnly:true})) ;
         res.header({authToken:authToken});
 
-        return res.status(200).json({ok:true,message : "Login Successful",user, token:authToken}) ;
+        return res.status(200).json({ok:true,message : "Login Successful",user, refreshToken:refreshToken, authToken:authToken}) ;
 
     }
     catch(err){
